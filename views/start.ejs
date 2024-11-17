@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>start</title>
+    <link rel="stylesheet" href="/start.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <div class="n1">
+            <li>Wordpress.com</li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <div class="cont1">
+      <div class="head1">
+        <div class="c1">
+          More bloggers and independent creators choose WordPress than any other
+          blogging tool. Tap into intuitive, flexible tools that put writers,
+          bloggers, and creators first.
+        </div>
+      </div>
+      <div class="cv1">
+        <div class="v1 elevate-btn backlit-btn">
+          <form id="form1" action="/submit" method="POST">
+            <input
+              type="text"
+              class="titleName"
+              name="titleName"
+              placeholder="Enter Blog Title"
+            />
+            <div class="container">
+              <input
+                type="text"
+                id="message"
+                class="content"
+                name="content"
+                placeholder="Type your content here..."
+              />
+            </div>
+            <input type="submit" class="post" value="Post" />
+          </form>
+      
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="head3">
+        <div class="h3 backlit-btn"></div>
+        <div class="c3 backlit-btn"></div>
+      </div>
+    </footer>
+    <script>
+
+      $(document).on("keydown", function(e){
+        if(e.key === "Enter"){
+          e.preventDefault();
+        }
+      });
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+

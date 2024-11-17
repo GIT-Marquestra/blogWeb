@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <div class="cont1">
+      <div class="head1">
+        <div class="h1">Blog with the best.</div>
+        <div class="c1">
+          More bloggers and independent creators choose WordPress than any other
+          blogging tool. Tap into intuitive, flexible tools that put writers,
+          bloggers, and creators first.
+        </div>
+        <div class="but1 buttonStart">Start Blog</div>
+      </div>
+      <div class="cv1">
+        <div class="v1 elevate-btn backlit-btn">
+          <form id="form1" action="/submit" method="POST">
+            <input
+              type="text"
+              class="titleName"
+              name="titleName"
+              placeholder="Enter Blog Title"
+            />
+            <div class="container">
+              <input
+                type="text"
+                id="message"
+                class="content"
+                name="content"
+                placeholder="Type your content here..."
+              />
+            </div>
+            <input type="password" name="password" id="postPassword" placeholder="Enter Password" required>
+            <!-- <input type="submit" class="post" value="Post"/> -->
+            <button class="post" value="Post">Post</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="cont2">
+      <div class="head2">
+        <div class="h2 backlit-btn">
+
+          <% if (posts.length != 0){ %>
+            <% posts.forEach((post, index) => { %>
+              <a href="#previewSection">
+                <div class="blog-card" data-id="<%= post.id %>" data-title="<%= post.titleName %>" data-content="<%= post.content %>">
+                  <h2 class="blog-title"><%= post.titleName.slice(0, 20) %>...</h2>
+                  <p class="blog-content"><%= post.content.slice(0, 30) %>...</p>      
+               </div>
+              </a>
+              
+            <% }); %>
+          <% } %>
+
+        </div>
+        <div class="backlit-btn" id="previewSection" class="preview" style="display: none;">
+          <h2 id="previewTitle"></h2>
+          <p id="previewContent"></p>
+          <button id="closePreview">Close Preview</button>
+          <button id="deletePostBtn" type="submit">Delete Post</button>
+          <div id="passwordContainer" style="display: none;">
+            <input type="password" name="passwordElement" id="checkPassword" placeholder="Enter Password">
+            <button id="confirmDelete">Confirm Delete</button>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="content4 scroll-appear">
+
+        <h4>Let's Connect !!!</h4>
+
+        <span class="insta"><a href="https://www.instagram.com/ig_abhii.verma/"><img src="/images/Screenshot 2024-11-09 at 11.53.22 AM.png" alt=""></a></span>
+        
+        <span class="x"><a href="https://x.com/xMarquestra"><img src="/images/Screenshot 2024-11-09 at 11.53.39 AM.png" alt=""></a></span>
+        
+        <span class="lin"><a href="https://www.linkedin.com/in/abhishek-verma-6803b1309/"><img src="/images/Screenshot 2024-11-09 at 12.09.18 PM.png" alt=""></a></span>
+
+        <span class="github"><a href="https://github.com/GIT-Marquestra"><img src="/images/githubImg 12.09.56 PM.jpeg" alt=""></a></span>
+     </div>
+    </div>
+    <%- include("partials/footer.ejs") %>
+    <script src="/script.js"></script>
+  </body>
+</html>
+
+ 
